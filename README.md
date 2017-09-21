@@ -13,7 +13,7 @@ When you're done, host this on Heroku!
 * Node/Express - to serve your files
 * Angular - client-side logic
 * CSS - flex your style muscles
-* Heroku - to make your site available to the world
+* Heroku - to make your site available to the world (Pro Mode)
 
 ## Wireframes
 
@@ -38,4 +38,4 @@ Create a form that will take comments for each of your photos. Display the comme
 
 ## Pro Mode
 
-Use Angular's `$http` service to store your data on the server instead of the client.
+Use Angular's `$http` service to store your data on the server instead of the client. Try and deploy your site to Heroku. This is new, follow [this guide](https://docs.google.com/document/d/1Fz9O6Zv86eM-NARZwQKgVsX_5WNFYMop3TzI9g7LaWc/edit?usp=sharing) for some tips.
