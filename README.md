@@ -30,7 +30,7 @@ This is just an idea of what should be on the page. Style it and make it your ow
 ## Hints
 
 * Explore built-in Angular functionality like `ng-click`, `ng-src`, `ng-show`, `ng-hide`, `ng-if`.
-* Use arrays and objects to store your data.
+* Use arrays and objects to store your data on the **server**.
 
 ## Hard Mode
 
