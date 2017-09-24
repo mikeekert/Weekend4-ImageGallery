@@ -34,6 +34,7 @@
 
 .controls.ng-hide {
     opacity: 0;
+    pointer-events: none;
 }
 
 .controls.ng-hide-add,
@@ -76,11 +77,18 @@
     height: 40vh;
     min-height: 350px;
     width: 100%;
+    position: relative;
 }
 
 .like {
     position: absolute;
-    right: 45%;
+    right: 30%;
+    top: 50%;
+    pointer-events: auto;
+}
+.comment {
+    position: absolute;
+    right: 61%;
     top: 50%;
 }
 
