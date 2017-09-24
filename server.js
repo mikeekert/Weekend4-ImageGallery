@@ -11,6 +11,4 @@ app.use(bodyParser.json());
 app.use('/', index);
 app.use('/images', images);
 
-app.listen(3000, function(){
-console.log('listening on port 3000');
-});
+app.listen(process.env.PORT || 5000);
