@@ -61,8 +61,19 @@ body {
 	    opacity: 1;      
 }
 
-.like {
+.description {
+    font-size: 20px;
+    margin: 100px auto 0px auto;
+    color: #fff;
+    width: 80%;
     position: relative;
-    top: 45%;
-    right: 25%;
+    top: 0%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.like {
+    position: absolute;
+    right: 45%;
+    top: 50%;
 }
