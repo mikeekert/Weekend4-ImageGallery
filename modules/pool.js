@@ -14,6 +14,14 @@ var pg = require('pg');
 var url = require('url');
 var config = {};
 
+// If we are running on Heroku, use the remote database (with SSL)
+if(process.env.DATABASE_URL != undefined) {
+    connectionString = process.env.DATABASE_URL + "?ssl=true";
+} else {
+    // running locally, use our local database instead
+    connectionString = 'postgres://localhost:5432/imagegallery';
+}
+
 if (process.env.DATABASE_URL) {
   // Heroku gives a url, not a connection object
   // https://github.com/brianc/node-pg-pool
