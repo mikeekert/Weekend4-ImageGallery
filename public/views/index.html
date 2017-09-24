@@ -18,12 +18,12 @@
     <div class="content" ng-controller="ImageController as IC">
         <div class="gallery bg">
             <div ng-repeat="images in IC.imgArr">
-                <div class="imgContainer" ng-style="{'background-image':'url({{ images.url }})'}">
-                    <div class="controls">
-                            <div class="description"> {{ images.desc }}</div>
+                <div class="imgContainer" ng-style="{'background-image':'url({{ images.url }})'}" ng-click="visible = !visible">
+                    <div class="controls" ng-show="visible" ng-animate="'fade'">
+                        <div class="description"> {{ images.desc }}    
+                        </div>
                         <a class="btn btn-info btn-lg like" ng-init="IC.createLike(images)" ng-click="IC.addLike(images)">
-
-                            <span class="glyphicon glyphicon-heart"></span> {{ images.likes }}  
+                        <span class="glyphicon glyphicon-heart"></span> {{ images.likes }}  
                         </a>
                     </div>
                 </div>
