@@ -32,7 +32,7 @@
                         <span class="glyphicon glyphicon-comment"></span> {{ images.commentsCount }}  
                         </a>
                         <div class="comments" ng-show="images.commentsShow">
-                            <input placeholder="Comment" class="commentIn" ng-model="item.name">
+                            <input placeholder="Comment" class="commentIn" ng-model="images.newComment">
                             <button class="btn btn-info btn-lg send" ng-init="IC.getComment(images)" ng-click="IC.commentIn(images)">
                                 <span class="glyphicon glyphicon-ok sendIcon"></span>
                             </button>

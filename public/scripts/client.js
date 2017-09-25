@@ -77,14 +77,14 @@ App.controller('ImageController', function ($http) {
     };
 
     vm.commentIn = function(commentInput) {
-    commentInput.comment = vm.newComment;
+    commentInput.comment = commentInput.newComment;
     console.log(commentInput.comment);
         $http({
             method: 'POST',
             url: '/comments/',
             data: commentInput
         }).then(function(resp){
-            vm.newComment = '';
+            commentInput.newComment = '';
             vm.getComment(commentInput);
             console.log('back from server with',resp);
             vm.commentsCount = resp.length; 
