@@ -3,6 +3,7 @@ var App = angular.module('App', ['ngAnimate']);
 App.controller('ImageController', function ($http) {
     
     var vm = this;
+    vm.comArr = [];
     vm.imgArr = [{
             url: '../images/min/Image1-min.jpg',
             name: 'image1',
@@ -95,7 +96,12 @@ App.controller('ImageController', function ($http) {
             method: 'GET',
             url: '/comments/'+image.name
         }).then(function(resp){
+            console.log(resp);
             image.commentsCount = resp.data.length;
+            for (var i = 0; i < resp.data.length; i++) {
+                vm.comArr.push(resp.data[i].comment);
+            }
+            console.log(vm.comArr);
         });
     };
 

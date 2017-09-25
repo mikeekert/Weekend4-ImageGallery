@@ -22,12 +22,47 @@
     opacity: 1;
     position: relative;
     right: 0;
-    z-index: 99;
+    z-index: 1;
 }
 
 .comment {
     float: right;
     margin-right: 25%;
+}
+
+.commentDisplay {
+    background-color: rgba(245, 245, 245, 1);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    line-height: 200px;
+    min-height: 350px;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: .1s linear all;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 100;
+    color: #000000;
+    overflow:auto;
+    
+}
+
+.commentList {
+    overflow: auto;
+    color: #000;
+    line-height: 20px;
+    font-size: 15px; 
+}
+
+.commentScroll {
+    overflow: auto;
+    color: #000;
+    line-height: 40px;
+    font-size: 30px;    
 }
 
 .commentIn {
@@ -68,6 +103,7 @@
     transition: .5s linear all;
     vertical-align: middle;
     width: 100%;
+    z-index: 1
 }
 
 .controls.ng-hide {
