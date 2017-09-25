@@ -12,6 +12,33 @@
     display: table;
     line-height: 0;
 }
+.comments {
+    Color: #000;
+    display: block;
+    min-height: 0px;
+    line-height: 0px;
+}
+
+.commentIn {
+    width: 50%;
+    margin-top: 15px;
+    height: 40px;
+}
+
+.close, .close:focus, .close:active {
+    position: relative;
+    color: #fff;
+    z-index: 99;
+    right: 0;
+    opacity: 1;
+    margin: 25px;
+}
+
+.send {
+    vertical-align: bottom;
+    position: inherit;
+    height: 40px;
+}
 
 .controls {
     -moz-transition: opacity .1s;
@@ -46,8 +73,7 @@
     color: #fff;
     font-size: 20px;
     line-height: 20px;
-    margin: 100px auto 0;
-    position: relative;
+    margin: 100px auto 70px;
     text-align: center;
     top: -16%;
     width: 80%;
@@ -81,23 +107,20 @@
 }
 
 .like {
-    position: absolute;
-    right: 30%;
-    top: 50%;
+    float: left;
     pointer-events: auto;
+    margin-left: 25%;
 }
 .comment {
-    position: absolute;
-    right: 61%;
-    top: 50%;
-}
+    float: right;
+    margin-right: 25%;}
 
 body {
     background: #e5e5e5;
     height: 100vh;
 }
 
-@media screen and (max-width: 480px) and (min-width: 220px) {
+@media screen and (max-width: 766px) and (min-width: 220px) {
     .gallery>div {
         flex-grow: 1;
         float: left;
@@ -105,6 +128,25 @@ body {
         position: relative;
         width: 100%;
     }
+    .imgContainer {
+        background-position: 25% 30%;
+    }
+
+    .like {
+        right: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 767px) {
+    .gallery>div {
+        flex-grow: 1;
+        float: left;
+        margin: 5px;
+        position: relative;
+        width: 45%;
+    }
+
+
 
     .like {
         right: 40%;
