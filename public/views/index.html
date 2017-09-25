@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Images Gallery</title>
     <script src="/vendors/angular.min.js"></script>
+    
     <script src="/vendors/angular-animate.min.js"></script>
+    
     <script src="/scripts/client.js"></script>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
@@ -18,10 +20,9 @@
     <div class="content" ng-controller="ImageController as IC">
         <div class="gallery bg">
             <div ng-repeat="images in IC.imgArr">
-                    <span class="glyphicon glyphicon-remove close" ng-click="visible=false" ng-show="visible" ng-animate="'fade'"></span>
-                    
-                <div class="imgContainer" ng-style="{'background-image':'url({{ images.url }})'}" ng-click="visible = true; $event.stopPropagation();">
-                    <div class="controls" ng-show="visible" ng-animate="'fade'">
+                <span class="glyphicon glyphicon-remove close" ng-click="visible=false" ng-show="visible"></span>
+                <div class="imgContainer" ng-style="{'background-image':'url({{ images.url }})'}" ng-click="visible = true;">
+                    <div class="controls" ng-show="visible">
                         <div class="description"> {{ images.desc }}
                         </div>
                         <a class="btn btn-info btn-lg like" ng-init="IC.createLike(images)" ng-click="IC.addLike(images)">
@@ -30,12 +31,13 @@
                         <a class="btn btn-info btn-lg comment" ng-click="images.commentsShow = !images.commentsShow">
                         <span class="glyphicon glyphicon-comment"></span> {{ images.commentsCount }}  
                         </a>
-                        <div class="comments" ng-show="images.commentsShow" ng-animate="'fade'">
-                            <input placeholder="Comment" class="commentIn" ng-model="item.name" ng-animate="'fade'">
+                        <div class="comments" ng-show="images.commentsShow">
+                            <input placeholder="Comment" class="commentIn" ng-model="item.name">
                             <button class="btn btn-info btn-lg send" ng-init="IC.getComment(images)" ng-click="IC.commentIn(images)">
                                 <span class="glyphicon glyphicon-ok sendIcon"></span>
                             </button>
                         </div>
+                        
                     </div>
                 </div>
             </div>
