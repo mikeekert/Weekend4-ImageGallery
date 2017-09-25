@@ -1,9 +1,6 @@
 var router = require('express').Router();
 var pool = require('../modules/pool');
 
-
-
-
 router.get('/:id', function (req, res) {    
     var dbId = req.params.id;
     pool.connect(function (conErr, client, done) {
