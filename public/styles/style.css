@@ -12,40 +12,43 @@
     display: table;
     line-height: 0;
 }
-.comments {
-    Color: #000;
-    display: block;
-    min-height: 0px;
-    line-height: 0px;
+
+.close,
+.close:focus,
+.close:active,
+.close:hover {
+    color: #fff;
+    margin: 25px;
+    opacity: 1;
+    position: relative;
+    right: 0;
+    z-index: 99;
+}
+
+.comment {
+    float: right;
+    margin-right: 25%;
 }
 
 .commentIn {
-    width: 50%;
-    margin-top: 15px;
     height: 40px;
+    margin-top: 15px;
+    width: 50%;
 }
 
 .commentText {
-    width: 90%;
-    min-height: 100px;
-    margin-top: 10px;
     border-top-style: dotted;
     line-height: 25px;
+    margin-top: 10px;
+    min-height: 100px;
+    width: 90%;
 }
 
-.close, .close:focus, .close:active, .close:hover {
-    position: relative;
-    color: #fff;
-    z-index: 99;
-    right: 0;
-    opacity: 1;
-    margin: 25px;
-}
-
-.send {
-    vertical-align: bottom;
-    position: inherit;
-    height: 40px;
+.comments {
+    color: #000;
+    display: block;
+    line-height: 0;
+    min-height: 0;
 }
 
 .controls {
@@ -110,18 +113,21 @@
     background-size: cover;
     height: 40vh;
     min-height: 350px;
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 
 .like {
     float: left;
-    pointer-events: auto;
     margin-left: 25%;
+    pointer-events: auto;
 }
-.comment {
-    float: right;
-    margin-right: 25%;}
+
+.send {
+    height: 40px;
+    position: inherit;
+    vertical-align: bottom;
+}
 
 body {
     background: #e5e5e5;
@@ -139,7 +145,6 @@ body {
     .imgContainer {
         background-position: 25% 30%;
     }
-
     .like {
         right: 40%;
     }
@@ -153,9 +158,6 @@ body {
         position: relative;
         width: 45%;
     }
-
-
-
     .like {
         right: 40%;
     }

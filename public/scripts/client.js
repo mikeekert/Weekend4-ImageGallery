@@ -76,29 +76,25 @@ App.controller('ImageController', function ($http) {
         });
     };
 
-    vm.commentIn = function(commentInput) {
-    commentInput.comment = commentInput.newComment;
-    console.log(commentInput.comment);
+    vm.commentIn = function(image) {
+    image.comment = image.newComment;
         $http({
             method: 'POST',
             url: '/comments/',
-            data: commentInput
+            data: image
         }).then(function(resp){
-            commentInput.newComment = '';
-            vm.getComment(commentInput);
-            console.log('back from server with',resp);
+            image.newComment = '';
+            vm.getComment(image);
             vm.commentsCount = resp.length; 
-            commentInput.commentsShow = false;
+            image.commentsShow = false;
         });
                 
     };
     vm.getComment = function(image) {
-        console.log('sending off comment get:',image.name);
         $http({
             method: 'GET',
             url: '/comments/'+image.name
         }).then(function(resp){
-            console.log(resp);
             image.commentsCount = resp.data.length;
         });
     };

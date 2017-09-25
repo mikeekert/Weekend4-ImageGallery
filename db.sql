@@ -5,10 +5,9 @@ CREATE TABLE "public"."imagegallery" (
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE "public"."comments" (
+CREATE TABLE "public"."comments1" (
     "id" serial,
     "comment" varchar(200),
-    "image_id" integer,
+    "name" text,
     PRIMARY KEY ("id"),
-    CONSTRAINT "name" FOREIGN KEY ("image_id") REFERENCES "public"."gallery"("id") ON DELETE CASCADE
 );
