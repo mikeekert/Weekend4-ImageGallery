@@ -22,13 +22,10 @@
     opacity: 1;
     position: relative;
     right: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
-.comment {
-    float: right;
-    margin-right: 25%;
-}
+
 
 .commentDisplay {
     background-color: rgba(245, 245, 245, 1);
@@ -154,8 +151,6 @@
 }
 
 .like {
-    float: left;
-    margin-left: 25%;
     pointer-events: auto;
 }
 
