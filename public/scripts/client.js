@@ -86,7 +86,7 @@ App.controller('ImageController', function ($http) {
         }).then(function(resp){
             image.newComment = '';
             vm.getComment(image);
-            vm.commentsCount = resp.length; 
+            image.commentsCount = resp.length; 
             image.newcommentsShow = false;
         });
                 
@@ -104,6 +104,11 @@ App.controller('ImageController', function ($http) {
             }
             console.log(vm.comArr);
         });
+    };
+
+    vm.getreFresh = function(image) {
+        vm.commentIn(image);
+        vm.getComment(image);
     };
 
 });

@@ -64,8 +64,7 @@
 
 .commentIn {
     height: 40px;
-    margin-top: 15px;
-    width: 50%;
+    width: 80%;
 }
 
 .commentText {
@@ -78,9 +77,12 @@
 
 .comments {
     color: #000;
-    display: block;
     line-height: 0;
+    width: 50%;
     min-height: 0;
+    bottom: 33%;
+    position: absolute;
+    left: 20%;
 }
 
 .controls {
@@ -156,8 +158,8 @@
 
 .send {
     height: 40px;
-    position: inherit;
-    vertical-align: bottom;
+    display: inline;
+    position: absolute;
 }
 
 body {
