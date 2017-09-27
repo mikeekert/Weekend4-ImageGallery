@@ -36,7 +36,6 @@ router.get('/:id', function (req, res) {
                     res.sendStatus(500);
                 } else {
                     res.send(resultObj.rows);
-                    console.log('rows',resultObj.rows);
                 }
             });
         }

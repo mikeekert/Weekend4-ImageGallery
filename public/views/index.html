@@ -16,13 +16,13 @@
 <body ng-app="App">
     <div class="content" ng-controller="ImageController as IC">
         <div class="gallery bg">
-            <div ng-repeat="images in IC.imgArr">
+            <div ng-repeat="images in IC.imgArr track by $index">
                 <span class="glyphicon glyphicon-remove close" ng-click="visible=false" ng-show="visible"></span>
                 <div class="imgContainer" ng-style="{'background-image':'url({{ images.url }})'}" ng-click="visible = true;">
                     <div class="controls" ng-show="visible">
                         <div class="commentDisplay" ng-show="images.commentsShow" ng-click="images.commentsShow = !images.commentsShow">
                             <div class="commentScroll"> Comments:
-                                <li class="commentList" ng-repeat="com in IC.comArr track by $index">{{com}}</li>
+                                <li class="commentList" ng-repeat="com in images.comArr track by $index">{{ com }}</li>
                             </div>
                         </div>
                         <div class="description"> {{ images.desc }}

@@ -48,6 +48,7 @@ App.controller('ImageController', function ($http) {
     ];
 
     vm.addLike = function(image) {
+        console.log('in add Like');
         $http({
             method: 'PUT',
             url: '/images',
@@ -59,6 +60,8 @@ App.controller('ImageController', function ($http) {
     };
 
     vm.createLike = function (image) {
+        console.log('in create Like');
+        
         $http({
             method: 'POST',
             url: '/images',
@@ -69,6 +72,8 @@ App.controller('ImageController', function ($http) {
     };
 
     vm.getLike = function(image) {
+        console.log('in Get Like');
+        
         $http({
             method: 'GET',
             url: '/images/'+image.name
@@ -78,6 +83,8 @@ App.controller('ImageController', function ($http) {
     };
 
     vm.commentIn = function(image) {
+        console.log('in comment intake');
+        
     image.comment = image.newComment;
         $http({
             method: 'POST',
@@ -92,23 +99,23 @@ App.controller('ImageController', function ($http) {
                 
     };
     vm.getComment = function(image) {
+        console.log('in get comment');
+        
         $http({
             method: 'GET',
             url: '/comments/'+image.name
         }).then(function(resp){
-            console.log(resp);
             image.commentsCount = resp.data.length;
-            vm.comArr = [];
+            image.comArr = [];
             for (var i = 0; i < resp.data.length; i++) {
-                vm.comArr.push(resp.data[i].comment);
+                image.comArr.push(resp.data[i].comment);
             }
-            console.log(vm.comArr);
+            console.log('get comments array:', image);
         });
     };
 
     vm.getreFresh = function(image) {
+        console.log('in refresh func');
         vm.commentIn(image);
-        vm.getComment(image);
     };
-
 });
