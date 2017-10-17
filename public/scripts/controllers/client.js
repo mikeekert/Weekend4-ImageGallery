@@ -1,6 +1,6 @@
-var App = angular.module('App', ['ngAnimate']);
+var App = angular.module('App', ['ngAnimate','ngMaterial']);
 
-App.controller('ImageController', function ($http) {
+App.controller('ImageController', function ($http, Gallery, $mdDialog) {
     
     var vm = this;
     vm.comArr = [];
@@ -84,8 +84,7 @@ App.controller('ImageController', function ($http) {
 
     vm.commentIn = function(image) {
         console.log('in comment intake');
-        
-    image.comment = image.newComment;
+        image.comment = image.newComment;
         $http({
             method: 'POST',
             url: '/comments/',
@@ -95,9 +94,9 @@ App.controller('ImageController', function ($http) {
             vm.getComment(image);
             image.commentsCount = resp.length; 
             image.newcommentsShow = false;
-        });
-                
+        });      
     };
+
     vm.getComment = function(image) {
         console.log('in get comment');
         
@@ -117,5 +116,17 @@ App.controller('ImageController', function ($http) {
     vm.getreFresh = function(image) {
         console.log('in refresh func');
         vm.commentIn(image);
+    };
+
+    vm.showAlert = function(event) {
+        console.log('Clicked!');
+        $mdDialog.show({
+            controller: 'GalleryController',
+            templateUrl: '/gallery',
+            parent: angular.element(document.body),
+            targetEvent: event,
+            clickOutsideToClose:true,
+            fullscreen: vm.customFullscreen // Only for -xs, -sm breakpoints.
+          });
     };
 });

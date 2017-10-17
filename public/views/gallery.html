@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/vendors/angular.min.js"></script>
+    <script src="/vendors/angular-animate.min.js"></script>
+    <script src="/vendors/angular-route.min.js"></script>
+    <script src="/vendors/angular-messages.js"></script>
+    <script src="/scripts/controllers/client.js"></script>
+    <script src="/scripts/controllers/gallery.controller.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/styles/angular-material.css">
+    <!-- <link rel="stylesheet" href="/styles/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+
+
+
+</head>
+
+<body ng-app="App">
+    <div class="section galleryMain" ng-controller="GalleryController as gc">
+            <div class="row">
+                <div layout = "row">
+                    <div class="box first-box galleryImg"></div>
+                    <div layout="column" class = "galleryContainComment">
+                        <div flex class = "galleryComments">Comments here</div>
+                        <p ng-repeat=""></p>
+                        <div flex class = "galleryComments">New Comments here</div>
+                    </div>
+                </div>                    
+            </div>
+    </div>
+
+</body>
+
+</html>
